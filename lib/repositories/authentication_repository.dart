@@ -21,5 +21,9 @@ class AuthenticationRepository {
     return _firebaseAuth.currentUser();
   }
 
+  Future<FirebaseUser> isSignIn() async {
+    return _firebaseAuth.currentUser();
+  }
+
 
 }
