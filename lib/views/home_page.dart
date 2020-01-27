@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:micro_blog/repositories/authentication_repository.dart';
 import 'package:micro_blog/views/views.dart';
 
 
@@ -8,6 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final AuthenticationRepository authenticationRepository = AuthenticationRepository();
   bool isAuth = false;
   bool isLoading = true;
 
@@ -38,6 +40,18 @@ class _HomePageState extends State<HomePage> {
   }
 
   _auth() async {
+    var user = await authenticationRepository.isSignIn();
+    setState(() {
+      if(user != null){
+        isLoading = false;
+        isAuth = true;
+      }else{
+        isLoading = false;
+        isAuth = false;
+      }
+    });
+    
+    print('c');
 
   }
 }
