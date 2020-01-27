@@ -15,7 +15,16 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       body: Container(
         child: Column(
-          children: <Widget>[],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Welcome'),
+              ],
+            ),
+            Text(widget.user.displayName)
+          ],
         ),
       ),
     );
