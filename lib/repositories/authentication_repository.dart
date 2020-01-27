@@ -9,7 +9,7 @@ class AuthenticationRepository {
       : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
         _googleSignIn = googleSignin ?? GoogleSignIn();
 
-  Future<FirebaseUser>signInWithGoogle() async {
+  Future<FirebaseUser> signInWithGoogle() async {
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
     final AuthCredential credential = GoogleAuthProvider.getCredential(
@@ -25,5 +25,8 @@ class AuthenticationRepository {
     return _firebaseAuth.currentUser();
   }
 
-
+  Future<void> signOut() async {
+    _firebaseAuth.signOut();
+    _googleSignIn.signOut();
+  }
 }
