@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:micro_blog/repositories/authentication_repository.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -19,7 +20,9 @@ class _LoginPageState extends State<LoginPage> {
               MdiIcons.google,
             ),
             label: Text('Login with Google'),
-            onPressed: (){},
+            onPressed: (){
+              AuthenticationRepository().signInWithGoogle();
+            },
           ),
         ),
       ),
