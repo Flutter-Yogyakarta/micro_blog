@@ -13,8 +13,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    _auth();
   }
 
   @override
@@ -22,10 +22,22 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: isLoading ? Container(
         child: Center(
-          child: LinearProgressIndicator(backgroundColor: Colors.orange,),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              LinearProgressIndicator(backgroundColor: Colors.orange,),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Text('Loading...'),)
+            ],
+          ),
         ),
       ) :
       isAuth ? UserPage() : LoginPage(),
     );
+  }
+
+  _auth() async {
+
   }
 }
