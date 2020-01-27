@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:micro_blog/repositories/authentication_repository.dart';
 import 'package:micro_blog/views/views.dart';
@@ -12,6 +13,7 @@ class _HomePageState extends State<HomePage> {
   final AuthenticationRepository authenticationRepository = AuthenticationRepository();
   bool isAuth = false;
   bool isLoading = true;
+  FirebaseUser firebaseUser;
 
   @override
   void initState() {
@@ -35,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ) :
-      isAuth ? UserPage() : LoginPage(),
+      isAuth ? UserPage(user: firebaseUser,) : LoginPage(),
     );
   }
 
@@ -45,6 +47,7 @@ class _HomePageState extends State<HomePage> {
       if(user != null){
         isLoading = false;
         isAuth = true;
+        firebaseUser = user;
       }else{
         isLoading = false;
         isAuth = false;
