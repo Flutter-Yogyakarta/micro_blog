@@ -13,8 +13,10 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         child: Center(
           child: FlatButton.icon(
+            color: Colors.orange,
+            colorBrightness: Brightness.dark,
             icon: Icon(
-              Icons.label,
+              MdiIcons.google,
             ),
             label: Text('Login with Google'),
             onPressed: (){},
