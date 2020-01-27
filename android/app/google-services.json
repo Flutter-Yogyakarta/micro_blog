@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "398992241707",
+    "firebase_url": "https://flutter-jogja.firebaseio.com",
+    "project_id": "flutter-jogja",
+    "storage_bucket": "flutter-jogja.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398992241707:android:3aefdc7762b6d74ab9a66e",
+        "android_client_info": {
+          "package_name": "dev.flutterjogja.micro_blog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398992241707-qkqsvcl88d1tb7lmn1uded4qpmlq52nr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfluprUzuONzS4aoBTtBX4VznB7gSZxnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398992241707-qkqsvcl88d1tb7lmn1uded4qpmlq52nr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
